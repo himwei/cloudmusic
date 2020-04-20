@@ -14,13 +14,20 @@
             var id = "";
             Osubmit.onclick=function()
             {
+                // http://music.163.com/song?id=1412685351&userid=289328479
+
+                // https://music.163.com/#/song?id=1427351741
                 if(Otext.value=="")
                 {
                     alert("请重新输入");
                 }
                 else
                 {
-                    id = Otext.value;
+                    var value = Otext.value+"";
+                    var start = Otext.value.indexOf("?")+4;
+                    var song = value.substr(start,10)+"";
+                    //alert(song);
+                    id = song;
                     // 调用函数
                     getData();
                 
